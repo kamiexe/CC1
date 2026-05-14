@@ -1,0 +1,78 @@
+Assignment: Performing Scala programs for implementing loops, functions, collections- Lists, Maps and Streams.
+
+Step 0: Open CMD to your Desktop
+Make sure your terminal is pointed to your workspace:
+Paste this in cmd:
+cd (and then desktop location, on tomorrow's pc)
+Eg: cd C:\Users\aayus\Desktop
+
+
+
+Step 1: Create the File
+In your Command Prompt, make sure you are still on your Desktop and create the file:
+Paste this in cmd
+notepad Project1.scala
+
+
+Step 2: The Consolidated Code
+Paste this into Notepad, save it, and close it:
+object Project1 {
+  def main(args: Array[String]): Unit = {
+    println("========== PROJECT 1 ==========\n")
+
+    // --- 1. LOOPS ---
+    println("--- 1. Loops ---")
+    print("For Loop (1 to 3): ")
+    for (i <- 1 to 3) print(s"$i ")
+    
+    print("\nWhile Loop: ")
+    var x = 3
+    while (x > 0) {
+      print(s"$x ")
+      x -= 1
+    }
+    println("\n")
+
+    // --- 2. FUNCTIONS ---
+    println("--- 2. Functions ---")
+    def calculateDistance(speed: Int, time: Int): Int = speed * time
+    val trip = calculateDistance(80, 5)
+    println(s"If travelling at 80km/h for 5 hours, distance is: $trip km\n")
+
+    // --- 3. COLLECTIONS: LISTS ---
+    println("--- 3. Collections: Lists ---")
+    val gearList = List("Helmet", "Jacket", "Gloves")
+    println(s"First piece of gear: ${gearList.head}")
+    println(s"Full gear list: $gearList\n")
+
+    // --- 4. COLLECTIONS: MAPS ---
+    println("--- 4. Collections: Maps ---")
+    val locationCodes = Map("PN" -> "Pune", "MU" -> "Mumbai", "NG" -> "Nagpur")
+    println(s"Location code 'PN' maps to: ${locationCodes("PN")}")
+    println(s"Does the map contain Goa? ${locationCodes.contains("GOA")}\n")
+
+    // --- 5. COLLECTIONS: STREAMS (LAZYLIST) ---
+    println("--- 5. Collections: Streams (LazyList) ---")
+    // LazyLists compute values only when needed
+    val infiniteStream = LazyList.from(1).map(_ * 10)
+    println(s"First 4 multiples of 10 from the stream: ${infiniteStream.take(4).toList}")
+    
+    println("\n===============================")
+  }
+}
+
+
+
+Step 3: Compile and Run
+Run these two commands exactly as before:
+
+scalac Project1.scala
+
+scala Project1
+
+
+
+
+
+
+
